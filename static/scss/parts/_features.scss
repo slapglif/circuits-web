@@ -1,0 +1,21 @@
+/*------------------------------------------------------------------
+
+  Features
+
+-------------------------------------------------------------------*/
+.youplay-features {
+    margin-bottom: 4.5rem;
+
+    .feature {
+        position: relative;
+        padding: 3rem;
+        margin-bottom: 3rem;
+        text-align: center;
+
+        // icon
+        i {
+            font-size: 5rem;
+        }
+
+    }
+}

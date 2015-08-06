@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--
+  Name: Youplay - Game Template based on Bootstrap
+  Version: 1.0.0
+  Author: nK
+  Website: http://nkdev.info
+  Support: http://nk.ticksy.com
+  Purchase: http://themeforest.net/item/youplay-game-template-based-on-bootstrap/11306207?ref=nKdev
+  License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+  Copyright 2015.
+-->
+<!--[if lt IE 7]>  <html class="lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html class="lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>youplay</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Icon -->
+  <link rel="icon" type="image/png" href="/static/images/icon.png">
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="/static/plugins/bootstrap/css/bootstrap.min.css" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" type="text/css" href="/static/plugins/fontawesome/css/font-awesome.min.css" />
+
+  <!-- Owl Catousel -->
+  <link rel="stylesheet" type="text/css" href="/static/plugins/owl.carousel/owl.carousel.css" />
+  <!-- youplay -->
+
+    <style>
+      @-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+body {
+  background: black;
+}
+
+.arrow {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+  background-size: contain;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+
+  </style>
+
+  <link rel="stylesheet" type="text/css" href="/static/css/youplay.css" />
+  <!--[if lt IE 9]>
+      <script src="/static/plugins/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="page-preloader preloader-wrapp">
+    <img src="https://i.imgur.com/8Z692wk.png" alt="">
+    <div class="preloader"></div>
+  </div>
+  <!-- /Preloader -->
+
+  <!-- Navbar -->
+  <nav class="navbar-youplay navbar navbar-default navbar-fixed-top ">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="off-canvas" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="http://cryptocircuits.com/wp-content/uploads/2015/05/circuitslogo.png" alt="">
+        </a>
+      </div>
+{#      <div id="navbar" class="navbar-collapse collapse">#}
+{#        <ul class="nav navbar-nav">#}
+{#          <li class="active"><a href="index.html">#}
+{#                    Home <span class="label">youplay</span>#}
+{#                </a>#}
+{#          </li>#}
+{#          <li class="dropdown dropdown-hover ">#}
+{#            <a href="#!" class="dropdown-toggle" role="button" aria-expanded="false">#}
+{#                      Store <span class="caret"></span> <span class="label">games</span>#}
+{#                    </a>#}
+{#            <div class="dropdown-menu" style="width: 320px;">#}
+{#              <ul role="menu">#}
+{#                <li><a href="store-1.html">Store Style 1</a>#}
+{#                </li>#}
+{#                <li><a href="store-2.html">Store Style 2</a>#}
+{#                </li>#}
+{#                <li><a href="cart.html">Cart</a>#}
+{#                </li>#}
+{#              </ul>#}
+{#              <!--#}
+{#                        -->#}
+{#              <ul role="menu">#}
+{#                <li><a href="store-product-1.html">Product Style 1</a>#}
+{#                </li>#}
+{#                <li><a href="store-product-2.html">Product Style 2</a>#}
+{#                </li>#}
+{#                <li><a href="checkout.html">Checkout</a>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
+{#          <li class="dropdown dropdown-hover ">#}
+{#            <a href="#!" class="dropdown-toggle" role="button" aria-expanded="false">#}
+{#                      Blog <span class="caret"></span> <span class="label">news</span>#}
+{#                    </a>#}
+{#            <div class="dropdown-menu" style="width: 320px;">#}
+{#              <ul role="menu">#}
+{#                <li><a href="blog-1.html">Blog Style 1</a>#}
+{#                </li>#}
+{#                <li><a href="blog-2.html">Blog Style 2</a>#}
+{#                </li>#}
+{#                <li><a href="blog-3.html">Blog Style 3</a>#}
+{#                </li>#}
+{#              </ul>#}
+{#              <!--#}
+{#                        -->#}
+{#              <ul role="menu">#}
+{#                <li><a href="blog-post-1.html">Blog Post 1</a>#}
+{#                </li>#}
+{#                <li><a href="blog-post-2.html">Blog Post 2</a>#}
+{#                </li>#}
+{#                <li><a href="blog-post-3.html">Blog Post 3</a>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
+{#          <li class="dropdown dropdown-hover ">#}
+{#            <a href="#!" class="dropdown-toggle" role="button" aria-expanded="false">#}
+{#                      Pages <span class="caret"></span> <span class="label">full list</span>#}
+{#                    </a>#}
+{#            <div class="dropdown-menu">#}
+{#              <ul role="menu">#}
+{#                <li><a href="user-profile.html">User Profile</a>#}
+{#                </li>#}
+{#                <li><a href="search.html">Search</a>#}
+{#                </li>#}
+{#                <li><a href="coming-soon.html">Coming Soon</a>#}
+{#                </li>#}
+{#                <li><a href="login.html">Login</a>#}
+{#                </li>#}
+{#                <li><a href="404.html">404</a>#}
+{#                </li>#}
+{#                <li><a href="blank.html">Blank</a>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
+{#        </ul>#}
+{#        <ul class="nav navbar-nav navbar-right">#}
+{#          <li class="dropdown dropdown-hover ">#}
+{#            <a href="#!" class="dropdown-toggle" role="button" aria-expanded="false">#}
+{#                      John Doe <span class="badge bg-default">2</span> <span class="caret"></span> <span class="label">it is you</span>#}
+{#                    </a>#}
+{#            <div class="dropdown-menu">#}
+{#              <ul role="menu">#}
+{#                <li><a href="../documentation">Documentation</a>#}
+{#                </li>#}
+{#                <li><a href="http://themeforest.net/item/youplay-game-template-based-on-bootstrap/11306207?ref=nKdev">Purchase</a>#}
+{#                </li>#}
+{#                <li class="divider"></li>#}
+{##}
+{#                <li><a href="user-profile.html">Profile <span class="badge pull-right bg-warning">13</span></a>#}
+{#                </li>#}
+{#                <li><a href="cart.html">My Cart <span class="badge pull-right bg-default">3</span></a>#}
+{#                </li>#}
+{#                <li class="divider"></li>#}
+{##}
+{#                <li><a href="login.html">Log Out</a>#}
+{#                </li>#}
+{#                <li class="dropdown-submenu pull-left">#}
+{#                  <a href="#!">More..</a>#}
+{#                  <div class="dropdown-menu">#}
+{#                    <ul role="menu">#}
+{#                      <li><a href="#!">3rd level</a>#}
+{#                      </li>#}
+{#                      <li><a href="#!">3rd level</a>#}
+{#                      </li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
+{#          <li>#}
+{#            <a class="search-toggle" href="search.html">#}
+{#              <i class="fa fa-search"></i>#}
+{#            </a>#}
+{#          </li>#}
+{#        </ul>#}
+      </div>
+    </div>
+  </nav>
+  <!-- /Navbar -->
+
+  <!-- Main Content -->
+
+
+
+    <!-- Banner -->
+    <section class="youplay-banner banner-top">
+      <div class="image" style="background-image: url(http://cryptocircuits.com/wp-content/uploads/2014/03/screen2.jpg)" data-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;">
+      </div>
+
+      <div class="info" data-top="opacity: 1; transform: translate3d(0px,0px,0px);" data-top-bottom="opacity: 0; transform: translate3d(0px,150px,0px);" data-anchor-target=".youplay-banner.banner-top">
+        <div>
+          <div class="container">
+            <h2>Crypto Circuits: <br>Connecting Crypto like a Circuit</h2>
+            <em>The most unique and innovative wallet experience so far, featuring video, audio, web panels and even a trade bot!</em>
+            <br>
+            <br>
+            <br>
+
+          </div>
+            <div align="center">
+            <a class="btn btn-lg centered-text" href="#!">See our github!</a>
+              </div>
+                      <div align="center">
+              <p>ICO DISTRIBUTION WITH DPOS 2.0</p>
+                <p>COIN COUNT: 2,718,281</p>
+                <p>STAKING: DPOS</p>
+          </div>
+        </div>
+
+      </div>
+        <div class="arrow bounce">
+
+</div>
+    </section>
+    <!-- /Banner -->
+
+
+
+    <!-- Features -->
+    <h2 class="container h1">Why Circuits?</h2>
+    <section class="youplay-features container">
+      <div class="col-md-3 col-xs-12">
+        <div class="feature angled-bg">
+          <i class="fa fa-table"></i>
+          <h3>Unlockable Features</h3>
+          <small>A Web-integrated system ensures there's always new content to unlock.</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-12">
+        <div class="feature angled-bg">
+          <i class="fa fa-line-chart"></i>
+          <h3>Market Tools</h3>
+          <small>In-wallet market analysis tools to help boost your profit.</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-12">
+        <div class="feature angled-bg">
+          <i class="fa fa-check-circle-o"></i>
+          <h3>Proof of Stake</h3>
+          <small>Our IPO based model ensures the coins in circulation are valuable and serve a purpose to the market.</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-12">
+        <div class="feature angled-bg">
+          <i class="fa fa-users"></i>
+          <h3>Trade Bots</h3>
+          <small>Our unique wallet client has the first ever integrated trade bot featuring market arbitrage!</small>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Latest News -->
+    <h2 class="container h1">Latest News</h2>
+    <section class="youplay-news container">
+      <!-- Single News Block -->
+      <div class="news-one row">
+        <div class="col-md-4">
+          <a href="https://bitcointalk.org/index.php?topic=1089933.msg12015288#msg12015288" class="angled-img">
+            <div class="img">
+              <img src="http://www.nuffieldfoundation.org/sites/default/files/PP_Electric_circuits.jpg" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="clearfix">
+            <h3 class="h2 pull-left m-0"><a href="https://bitcointalk.org/index.php?topic=1089933.msg12015288#msg12015288">Johnny 5 is alive!</a></h3>
+            <span class="date pull-right"><i class="fa fa-calendar"></i> Today</span>
+          </div>
+          <div class="tags">
+            <i class="fa fa-tags"></i>
+          </div>
+          <div class="description">
+            <p>
+              Hi Everyone -
+                Just wanted to give a short update concerning the in-wallet trading bot. Barakus and the bot team pulled a 36 hr shift and finished squashing all the bugs, and have relayed the message <p>“Johnny 5 is alive!”</p>
+            </p>
+
+          </div>
+          <a href="https://bitcointalk.org/index.php?topic=1089933.msg12015288#msg12015288" class="btn read-more pull-left">Read More</a>
+        </div>
+      </div>
+      <!-- /Single News Block -->
+
+      <!-- Single News Block -->
+      <div class="news-one row">
+        <div class="col-md-4">
+          <a href="https://bitcointalk.org/index.php?topic=1089933.msg12040037#msg12040037" class="angled-img">
+            <div class="img">
+              <img src="http://kc1.freebieservers.com/1.jpg" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="clearfix">
+            <h3 class="h2 pull-left m-0"><a href="https://bitcointalk.org/index.php?topic=1089933.msg12040037#msg12040037">Circ on the rise</a></h3>
+            <span class="date pull-right"><i class="fa fa-calendar"></i> August 3, 2015</span>
+          </div>
+          <div class="tags">
+            <i class="fa fa-tags"></i>
+          </div>
+          <div class="description">
+            As the market shows, CIRC is on the rise. This has of course implications for access to the various Lounges, as it becomes more expensive to gain entry to the different lounges for newcomers. While it is naturally the right of early investors to enjoy these lounges, we want to make sure there is mobility for newcomers to move deeper into the community...
+          </div>
+          <a href="https://bitcointalk.org/index.php?topic=1089933.msg12040037#msg12040037" class="btn read-more pull-left">Read More</a>
+        </div>
+      </div>
+      <!-- /Single News Block -->
+
+      <!-- Single News Block -->
+      <div class="news-one row">
+        <div class="col-md-4">
+          <a href="https://bitcointalk.org/index.php?topic=1089933.msg12040037#msg12040037" class="angled-img">
+            <div class="img">
+              <img src="http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/circuit-board-seisiri-silapasuwanchai.jpg" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="clearfix">
+            <h3 class="h2 pull-left m-0"><a href="https://bitcointalk.org/index.php?topic=1089933.msg12040037#msg12040037">Bot testing</a></h3>
+            <span class="date pull-right"><i class="fa fa-calendar"></i> August 3, 2015</span>
+          </div>
+          <div class="tags">
+            <i class="fa fa-tags"></i>
+          </div>
+          <div class="description">
+            Want to update the community on a few things -
+
+Thanks for the offers to help with testing on the bot. We will initially be using one member on each platform. These individuals will be contacted tomorrow or Tuesday, when everything is ready to go. Please note: each tester will be receiving an individualized, signed build. This is both for analysis and tracking purposes,  and also to discourage leaks, screenshots, etc etc. Obviously this is a sensitive area and therefore we have settled on this approach.
+          </div>
+          <a href="https://bitcointalk.org/index.php?topic=1089933.msg12040037#msg12040037" class="btn read-more">Read More</a>
+        </div>
+      </div>
+      <!-- /Single News Block -->
+    </section>
+    <!-- /Latest News -->
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrapper" style="background-image: url(http://cryptocircuits.com/wp-content/uploads/2014/03/x.jpg)" data-bottom="transform:translate3d(0px,0px,0px);" data-bottom-top="transform:translate3d(0px,-200px,0px);" data-anchor-target="footer">
+
+        <!-- Social Buttons -->
+        <div class="social">
+          <div class="container" data-bottom-top="opacity: 0;" data-bottom="opacity: 1;">
+            <h3>Connect socially with <strong>Circuits</strong></h3>
+
+            <div class="row icons">
+              <div class="col-xs-4 col-sm-3">
+                <a href="#!">
+                  <i class="fa fa-facebook-square"></i>
+                  <span>Like on Facebook</span>
+                </a>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <a href="#!">
+                  <i class="fa fa-twitter-square"></i>
+                  <span>Follow on Twitter</span>
+                </a>
+              </div>
+              <div class="col-xs-4 col-sm-3">
+                <a href="#!">
+                  <i class="fa fa-bitcoin"></i>
+                  <span>Follow on Bitcointalk</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <!-- /Social Buttons -->
+
+        <!-- Copyright -->
+        <div class="copyright">
+          <div class="container">
+            <strong>CryptoCircuits</strong> &copy; 2015. All rights reserved
+          </div>
+        </div>
+        <!-- /Copyright -->
+
+      </div>
+    </footer>
+    <!-- /Footer -->
+  </section>
+  <!-- /Main Content -->
+
+  <!-- Search Block -->
+  <div class="search-block">
+    <a href="#!" class="search-toggle glyphicon glyphicon-remove"></a>
+    <form action="search.html">
+      <div class="youplay-input">
+        <input type="text" name="search" placeholder="Search...">
+      </div>
+    </form>
+  </div>
+  <!-- /Search Block -->
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/static/plugins/jquery/jquery.min.js"></script>
+
+  <!-- CSS Shapes Polyfill -->
+  <script type="text/javascript" src="/static/plugins/css-shapes-polyfill/shapes-polyfill.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script type="text/javascript" src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Skrollr -->
+  <script type="text/javascript" src="/static/plugins/skrollr/skrollr.min.js"></script>
+
+  <!-- Smooth Scroll -->
+  <script type="text/javascript" src="/static/plugins/smoothscroll/smoothscroll.js"></script>
+
+  <!-- Owl Carousel -->
+  <script type="text/javascript" src="/static/plugins/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Countdown -->
+  <script type="text/javascript" src="/static/plugins/jquery.coundown/jquery.countdown.min.js"></script>
+
+  <!-- youplay -->
+  <script type="text/javascript" src="/static/js/youplay.min.js"></script>
+  <!-- init youplay -->
+  <script>
+    if(typeof youplay !== 'undefined') {
+        youplay.init({
+            smoothscroll: false,
+        });
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(".countdown").each(function() {
+        $(this).countdown($(this).attr('data-end'), function(event) {
+          $(this).text(
+            event.strftime('%D days %H:%M:%S')
+          );
+        });
+    })
+  </script>
+
+</body>
+
+</html>

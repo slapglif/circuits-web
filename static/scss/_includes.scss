@@ -1,0 +1,99 @@
+@import "variables";
+
+/*------------------------------------------------------------------
+  [Typography]
+
+  Body copy: 14px/1.42857143 'Lato', sans-serif;
+
+  Notes: All font sizes are relative to the base font size (rem)
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Color codes]
+
+  Main:         #{$main_color} (buttons/links hover)
+  Back:         #{$back_darken_color} (Content Background)
+  Back Images:  #{$back_color} (back on images)
+  Text:         #{$text_color}
+  Muted Text:   #{$text_mute_color}
+
+  Primary:      #{$color_primary}
+  Success:      #{$color_success}
+  Info:         #{$color_info}
+  Warning:      #{$color_warning}
+  Danger:       #{$color_danger}
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Table of contents]
+
+  1. Base
+  2. Helper Classes
+  3. Angled Items
+    - Images
+    - Backgrounds
+    - Buttons
+    - Pagination
+  4. Forms
+    - Input and Textarea
+    - Ratings
+    - Selects
+    - Checkboxes
+    - Radios
+  5. Navbar
+  6. Banner
+  7. Owl Carousel
+  8. Countdown
+  9. Features
+  10. Accordion
+  11. Progress Bars
+  12. Timeline
+
+  13. Search Block
+  14. Side Bar
+  15. Comments / Review blocks
+
+  16. News
+  17. Store
+  18. Search Page
+  19. User Profile
+  20. Login
+  21. 404
+
+  22. Magnific Popup
+  23. Slider Revolution
+  24. Isotope
+
+  25. Footer
+  26. Preloader
+-------------------------------------------------------------------*/
+
+@import "parts/base";
+@import "parts/helper-classes";
+
+@import "parts/angled-items";
+@import "parts/forms";
+@import "parts/navbar";
+@import "parts/banner";
+@import "parts/carousel";
+@import "parts/countdown";
+@import "parts/features";
+@import "parts/accordion";
+@import "parts/progress";
+@import "parts/timeline";
+
+@import "parts/search-block";
+@import "parts/side-block";
+@import "parts/comments-block";
+
+@import "parts/news";
+@import "parts/store";
+@import "parts/search-page";
+@import "parts/user-profile";
+@import "parts/login";
+@import "parts/404";
+
+@import "parts/magnific-popup";
+@import "parts/slider-revolution";
+@import "parts/isotope";
+
+@import "parts/footer";
+@import "parts/preloader";

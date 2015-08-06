@@ -1,0 +1,83 @@
+/*------------------------------------------------------------------
+
+  Accordion
+
+-------------------------------------------------------------------*/
+.youplay-accordion {
+
+    .panel {
+        background: none;
+        border: none;
+    }
+
+    .panel-body {
+        padding: 1.25rem 1.8rem;
+    }
+
+    &.panel-group .panel + .panel {
+        margin-top: 1rem;
+    }
+
+    // heading
+    .panel-heading {
+        position: relative;
+        color: $text_color;
+        border: none;
+        background: none;
+        background-color: none;
+        border-radius: none;
+        padding: 0;
+
+        // heading
+        .panel-title a,
+        .panel-title a:hover,
+        .panel-title a:focus {
+            display: block;
+            padding: 1.25rem 1.8rem;
+            color: $text_color;
+            text-decoration: none;
+        }
+
+        + .panel-collapse > .panel-body {
+            border: none;
+        }
+
+        > * {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+
+    // plus minus icons
+    .icon-plus,
+    .icon-minus {
+        font-size: 2.5rem;
+        margin-top: -5px;
+        float: right;
+        &:after {
+            display: block;
+            content: '+';
+            transition: .3s transform ease;
+        }
+    }
+    .icon-minus {
+        &:after {
+            transform: rotate(45deg);
+        }
+    }
+
+
+    // colors
+    .panel-default > .panel-heading {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba($text_color, 0.1);
+            transform: skew(-$skew_size);
+            z-index: 1;
+        }
+    }
+
+}
